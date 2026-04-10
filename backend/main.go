@@ -19,7 +19,10 @@ func main() {
 	router := gin.Default()
 	middleware.Setup(router, cfg)
 
+	store := models.NewTodoStore(db.Collection)
+
 	router.GET("/api/health", handlers.HealthHandler(db))
+	router.POST("/api/v1/todos", handlers.CreateTodo(store))
 
 	log.Printf("Server starting on port %s", cfg.Port)
 	if err := router.Run(":" + cfg.Port); err != nil {
