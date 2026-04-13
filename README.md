@@ -18,6 +18,7 @@ A full-stack todo application with a Go backend, React frontend, and MongoDB dat
 | GET | `/api/v1/todos` | List all todos |
 | POST | `/api/v1/todos` | Create a todo |
 | PATCH | `/api/v1/todos/:id` | Update a todo |
+| DELETE | `/api/v1/todos/:id` | Delete a todo |
 
 ## Getting Started
 
